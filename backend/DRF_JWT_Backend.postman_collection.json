@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "d4409d57-7119-4339-bfae-1f3a18bc6341",
+		"_postman_id": "ef3600c8-d04e-4f87-8696-7909344f3b3e",
 		"name": "DRF_JWT_Backend",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -218,6 +218,134 @@
 								"cars",
 								""
 							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "get_comment_by_videoid",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "post_comment",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "update_comment",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjUwNzQ1MjQwLCJpYXQiOjE2NDk4ODEyNDAsImp0aSI6ImZjMzczYTFhMTcyNDQyYjg4NDgyNWE4MzdmYWRmMjViIiwidXNlcl9pZCI6NSwidXNlcm5hbWUiOiJkYW50aGVtYW4iLCJmaXJzdF9uYW1lIjoiRGFuaWVsIn0.3J5qFHR-yeBh0DgLM878NXpiklEV23nDZs_XV8qEMj4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"video_id\": \"N0DhCV_-Qbg\",\r\n    \"text\": \"UPDATED one last time!!!!! yayay React Demo\",\r\n    \"likes\": 1,\r\n    \"dislikes\": 1,\r\n    \"user_id\" : 5\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/comments/update/3/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comments",
+								"update",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Replies",
+			"item": [
+				{
+					"name": "post_new_reply",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjUwNzQ5MTkzLCJpYXQiOjE2NDk4ODUxOTMsImp0aSI6IjliODRjMTE5YjVjZjQyMjY4MDE3NGFjMzkwZDlkYzg5IiwidXNlcl9pZCI6MiwidXNlcm5hbWUiOiJ1c2VyXzEiLCJmaXJzdF9uYW1lIjoiIn0.IVz55Cahh2WZzMzDzHde--qa7PQNRu9qsozyvWDfDaA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"text\": \"replying to a comment\",\r\n        \"comment_id\": 1,\r\n        \"user_id\": 2\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/replies/new/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"replies",
+								"new",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get_replies_for_comment",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjUwNzQ4NDY0LCJpYXQiOjE2NDk4ODQ0NjQsImp0aSI6ImJhNWJjNWU4YWZiMTQ1ODliMjQ5MWM2NmVhMDY5YWRmIiwidXNlcl9pZCI6MiwidXNlcm5hbWUiOiJ1c2VyXzEiLCJmaXJzdF9uYW1lIjoiIn0.5VLeIU11EHgLlM95RDs_Joof3Dj_Q5DjZ3HH0M2eLSA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"user_id\": 3\r\n}"
 						}
 					},
 					"response": []

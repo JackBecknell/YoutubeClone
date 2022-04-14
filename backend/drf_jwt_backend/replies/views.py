@@ -18,9 +18,6 @@ class ReplyList(APIView, IsAuthenticated):
         serializer = ReplySerializer(replies, many=True)
         return Response(serializer.data, status=status.HTTP_200_OK)
 
-   
-    
-
 
 class ReplyPost(APIView, IsAuthenticated):
 

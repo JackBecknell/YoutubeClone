@@ -22,8 +22,9 @@ class ReplyList(APIView, IsAuthenticated):
 class ReplyPost(APIView, IsAuthenticated):
 
     def post(self, request):
-        print(request.data)
         serializer = ReplySerializer(data=request.data)
+        print("User: ", request.user)
+        print("Request: " + str(request.data))
         if serializer.is_valid():
             serializer.save(user=request.user)
             return Response(serializer.data, status=status.HTTP_201_CREATED)

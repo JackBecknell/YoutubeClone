@@ -259,13 +259,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjUwNzQ0NTc0LCJpYXQiOjE2NDk4ODA1NzQsImp0aSI6ImUzNzM1YmQxMDViZjRlYjNhMGQ1ZTczZTAyNmQxZTM5IiwidXNlcl9pZCI6NSwidXNlcm5hbWUiOiJkYW50aGVtYW4iLCJmaXJzdF9uYW1lIjoiRGFuaWVsIn0.Jv7NxfzeTmrGhtYmLUaxUbbyeIqJLwPROVHQBorM8xw",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjUwODI3MjIxLCJpYXQiOjE2NDk5NjMyMjEsImp0aSI6ImRhNGVjMTc2YjBjMDQ1NWY5YWZkNTM2ZmQzNzVhMjc2IiwidXNlcl9pZCI6MiwidXNlcm5hbWUiOiJ1c2VyXzEiLCJmaXJzdF9uYW1lIjoiIn0.GhuWti9t6uaemylvyg1LD_wDP8gOhjv3_OQzU5OTpcI",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n        \"video_id\": \"N0DhCV_-Qbg\",\r\n        \"text\": \"yayay React Demo\",\r\n        \"likes\": 1,\r\n        \"dislikes\": 1\r\n}",
+							"raw": "{\r\n        \"video_id\": \"N0DhCV_-Qbg\",\r\n        \"text\": \"new comment wowowowow\",\r\n        \"likes\": 1,\r\n        \"dislikes\": 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -304,7 +304,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"video_id\": \"N0DhCV_-Qbg\",\r\n    \"text\": \"UPDATED one last time!!!!! yayay React Demo\",\r\n    \"likes\": 1,\r\n    \"dislikes\": 1,\r\n    \"user_id\" : 5\r\n}",
+							"raw": "{\r\n    \"video_id\": \"N0DhCV_-Qbg\",\r\n    \"text\": \"UPDATED one last time!!!!! yayay React Demoadfasdf\",\r\n    \"likes\": 1,\r\n    \"dislikes\": 1,\r\n    \"user_id\" : 5\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -332,6 +332,36 @@
 					},
 					"response": []
 				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjUwODI3Nzc3LCJpYXQiOjE2NDk5NjM3NzcsImp0aSI6ImY5NTNmNWI3NTNiZTRmZWFhM2Q5Mzk4NmIyMjgyOThlIiwidXNlcl9pZCI6MiwidXNlcm5hbWUiOiJ1c2VyXzEiLCJmaXJzdF9uYW1lIjoiIn0.jWSfBTF9hOSU3sVlsANt0pz9Ngtdfzhc59Wo-Mx8I8c",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
 			]
 		},
 		{
@@ -344,13 +374,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjUwNzQ5MTkzLCJpYXQiOjE2NDk4ODUxOTMsImp0aSI6IjliODRjMTE5YjVjZjQyMjY4MDE3NGFjMzkwZDlkYzg5IiwidXNlcl9pZCI6MiwidXNlcm5hbWUiOiJ1c2VyXzEiLCJmaXJzdF9uYW1lIjoiIn0.IVz55Cahh2WZzMzDzHde--qa7PQNRu9qsozyvWDfDaA",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjUwODI3MjIxLCJpYXQiOjE2NDk5NjMyMjEsImp0aSI6ImRhNGVjMTc2YjBjMDQ1NWY5YWZkNTM2ZmQzNzVhMjc2IiwidXNlcl9pZCI6MiwidXNlcm5hbWUiOiJ1c2VyXzEiLCJmaXJzdF9uYW1lIjoiIn0.GhuWti9t6uaemylvyg1LD_wDP8gOhjv3_OQzU5OTpcI",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "    {\r\n        \"text\": \"replying to a comment\",\r\n        \"comment\": \"2\",\r\n        \"user\": 1\r\n    }",
+							"raw": "    {\r\n        \"text\": \"replying to a comment\",\r\n        \"comment\": \"2\"\r\n    }",
 							"options": {
 								"raw": {
 									"language": "json"

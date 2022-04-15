@@ -13,7 +13,7 @@ const HomePage = () => {
 
     useEffect(() => {
       makeGetRequest();
-  }, [])
+  }, [token])
 
   async function makeGetRequest(){
       try{
@@ -28,6 +28,7 @@ const HomePage = () => {
   return (
     <div className="container">
       <h1>video</h1>
+      <button onClick={makeGetRequest}>click me</button>
       {videos.items.map((vid, index) => 
           <p>Video {index+1} : video kind: {vid.kind} <br></br> video etag: {vid.etag} <br></br> video id (0): {vid.id.kind} <br></br> video id (1): {vid.id.videoId} <br></br> video snippet title: {vid.snippet.title} <br></br></p>
       )}

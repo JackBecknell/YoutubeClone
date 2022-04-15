@@ -11,29 +11,26 @@ const HomePage = () => {
   const [user, token] = useAuth();
   const [videos, setVideos] = useState([]);
 
-  useEffect(() => {
-    const fetchVideos = async () => {
-      console.log('?')
-      try {
-        let response = await axios.get("https://www.googleapis.com/youtube/v3/search?q=hello&key=AIzaSyCgqLI94Jl-nYlO29-rCyWW2CKT_H2gyec");
-        console.log(response.data)
-        console.log(`2 ${response.data}`)
-        
-        setVideos(response.data);
-      } catch (error) {
-        console.log(error.message);
+    useEffect(() => {
+      makeGetRequest();
+  }, [])
+
+  async function makeGetRequest(){
+      try{
+          let response = await axios.get('https://www.googleapis.com/youtube/v3/search?key=AIzaSyBQOGvQTWUgoFekKmd-OIAD3KO2og0EEyc&part=snippet');
+          setVideos(response.data)
+      } catch (ex) {
+          console.log('Oh no something didn\'t work right :(');
       }
-    };
-    fetchVideos();
-  }, [token]);
+  }
+
+
   return (
     <div className="container">
-
       <h1>video</h1>
       {videos.items.map((vid, index) => 
-      <p>Video {index+1} : video kind: {vid.kind} <br></br> video etag: {vid.etag} <br></br> video id (0): {vid.id.kind} <br></br> video id (1): {vid.id.videoId} <br></br> <br></br></p>
+          <p>Video {index+1} : video kind: {vid.kind} <br></br> video etag: {vid.etag} <br></br> video id (0): {vid.id.kind} <br></br> video id (1): {vid.id.videoId} <br></br> video snippet title: {vid.snippet.title} <br></br></p>
       )}
-
     </div>
   );
 };

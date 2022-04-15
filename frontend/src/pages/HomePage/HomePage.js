@@ -11,30 +11,66 @@ const HomePage = () => {
   const [user, token] = useAuth();
   const [videos, setVideos] = useState([]);
 
-    useEffect(() => {
-      makeGetRequest();
-  }, [token])
+  //   This is commented out so that we don't lose api priveleges for ALL TIME!!!
+  //   useEffect(() => {
+  //     makeGetRequest();
+  // }, [token])
 
-  async function makeGetRequest(){
-      try{
-          let response = await axios.get('https://www.googleapis.com/youtube/v3/search?key=AIzaSyAL-N85KHO7-kBzp2jBCtPCV_ISXnhml_0&part=snippet');
-          setVideos(response.data)
-          console.log(response.data)
-      } catch (ex) {
-          console.log('Oh no something didn\'t work right :(');
-      }
+  async function makeGetRequest() {
+    try {
+      let response = await axios.get(
+        "https://www.googleapis.com/youtube/v3/search?key=AIzaSyCgqLI94Jl-nYlO29-rCyWW2CKT_H2gyec&part=snippet"
+      );
+      setVideos(response.data);
+      console.log(response.data);
+    } catch (ex) {
+      console.log("Oh no something didn't work right :(");
+    }
   }
 
+  //This var stores valid info from 5 seperate video objects we returned through api calls. We are using this as a means of testing without using the api.
+  let fake_videos = [
+    {
+      kind: "youtube#searchListResponse",
+      etag: "EETq3Ns3RDJI8fxfk0sjQby-LtQ",
+      nextPageToken: "CAUQAA",
+      regionCode: "US",
+      pageInfo: { totalResults: 132, resultsPerPage: 5 },
+      items: [
+        {
+          kind: "youtube#searchResult",
+          etag: "9kAKvJmbB5YPOYE2N95e_-Dt0iQ",
+          id: { kind: "youtube#video", videoId: "HDhR2Yhnvfo" },
+        },
+        {
+          kind: "youtube#searchResult",
+          etag: "dPEcoEW6WqwyVP4bvW3hJTzr5CY",
+          id: { kind: "youtube#video", videoId: "8mTtRAEbmyk" },
+        },
+        {
+          kind: "youtube#searchResult",
+          etag: "HZHTA2cRZscSIX1NnTt81HPfiLs",
+          id: { kind: "youtube#video", videoId: "n61ULEU7CO0" },
+        },
+        {
+          kind: "youtube#searchResult",
+          etag: "J92f06yBYqqfDZ2ApxfQB9O3Zas",
+          id: { kind: "youtube#video", videoId: "Qt0-9mO-ZXY" },
+        },
+        {
+          kind: "youtube#searchResult",
+          etag: "jykrByAoNGnEgEO7kciUVSCXVLc",
+          id: { kind: "youtube#video", videoId: "vCy-sVHpeHw" },
+        },
+      ],
+    },
+  ];
 
   return (
-    <div className="container">
-      <h1>video</h1>
-      <button onClick={makeGetRequest}>click me</button>
-      {videos.length > 0 && 
-        videos.items.map((vid, index) => (
-          <p key={vid.id}>Video {index+1} : video kind: {vid.kind} <br></br> video etag: {vid.etag} <br></br> video id (0): {vid.id.kind} <br></br> video id (1): {vid.id.videoId} <br></br> video snippet title: {vid.snippet.title} <br></br></p>
-        )
-      )}
+    <div>
+      {fake_videos[0].items.map((vid, index) => (
+        <img src={`https://img.youtube.com/vi/${vid.id.videoId}/0.jpg`}></img>
+      ))}
     </div>
   );
 };

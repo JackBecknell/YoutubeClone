@@ -8,34 +8,38 @@ const HomePage = () => {
   // The "user" value from this Hook contains the decoded logged in user information (username, first name, id)
   // The "token" value is the JWT token that you will send in the header of any request requiring authentication
   const [user, token] = useAuth();
-  const [cars, setCars] = useState([]);
+  const [videos, setVideos] = useState([]);
 
   useEffect(() => {
-    const fetchCars = async () => {
+    const fetchVideos = async () => {
+      console.log('?')
       try {
-        let response = await axios.get("http://127.0.0.1:8000/api/cars/", {
-          headers: {
-            Authorization: "Bearer " + token,
-          },
-        });
-        setCars(response.data);
+        let response = await axios.get("https://www.googleapis.com/youtube/v3/search?q=hello&key=AIzaSyCgqLI94Jl-nYlO29-rCyWW2CKT_H2gyec");
+        console.log(response.data)
+        console.log(`2 ${response.data}`)
+        
+        setVideos(response.data);
       } catch (error) {
         console.log(error.message);
       }
     };
-    fetchCars();
+    fetchVideos();
   }, [token]);
   return (
     <div className="container">
-      <h1>Home Page for {user.username}!</h1>
-      {cars &&
-        cars.map((car) => (
-          <p key={car.id}>
-            {car.year} {car.model} {car.make}
-          </p>
-        ))}
+      <h1>video</h1>
+      {videos.items.map((vid, index) => 
+      <p>Video {index+1} : video kind: {vid.kind} <br></br> video etag: {vid.etag} <br></br> video id (0): {vid.id.kind} <br></br> video id (1): {vid.id.videoId} <br></br> <br></br></p>
+      )}
     </div>
   );
 };
 
 export default HomePage;
+
+// {videos &&
+//   videos.map((vid, index) => (
+//     <p key={index + 1}>
+//       {vid.kind} {vid.etag} {vid.id}
+//     </p>
+//   ))}

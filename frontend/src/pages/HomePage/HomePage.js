@@ -69,7 +69,12 @@ const HomePage = () => {
   return (
     <div>
       {fake_videos[0].items.map((vid, index) => (
-        <img src={`https://img.youtube.com/vi/${vid.id.videoId}/0.jpg`}></img>
+        <Link to={`/videopage/${vid.id.videoId}`}>
+          <p>{vid.id.videoId}</p>
+          <img
+            src={`https://img.youtube.com/vi/${vid.id.videoId}/0.jpg`}
+          ></img>{" "}
+        </Link>
       ))}
     </div>
   );

@@ -1,5 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import axios from "axios";
 import useAuth from "../../hooks/useAuth";
@@ -27,19 +28,14 @@ const HomePage = () => {
   }, [token]);
   return (
     <div className="container">
+
       <h1>video</h1>
       {videos.items.map((vid, index) => 
       <p>Video {index+1} : video kind: {vid.kind} <br></br> video etag: {vid.etag} <br></br> video id (0): {vid.id.kind} <br></br> video id (1): {vid.id.videoId} <br></br> <br></br></p>
       )}
+
     </div>
   );
 };
 
 export default HomePage;
-
-// {videos &&
-//   videos.map((vid, index) => (
-//     <p key={index + 1}>
-//       {vid.kind} {vid.etag} {vid.id}
-//     </p>
-//   ))}

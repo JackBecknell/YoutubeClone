@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import axios from "axios";
 
-const HomePage = () => {
+const HomePage = (props) => {
   const [videos, setVideos] = useState([]);
   const [requestReload, setRequestReload] = useState(true);
 
@@ -18,7 +18,7 @@ const HomePage = () => {
   async function makeGetRequest() {
     try {
       let response = await axios.get(
-        "https://www.googleapis.com/youtube/v3/search?key=AIzaSyBrh-qnhm83kyP5pa4zOuCmwv10iWzJYoA&q=rock_n_roll&part=snippet&maxResults=8"
+        `https://www.googleapis.com/youtube/v3/search?key=AIzaSyBrh-qnhm83kyP5pa4zOuCmwv10iWzJYoA&q=${props.searchTerm}&part=snippet&maxResults=8`
       );
       setVideos(response.data.items);
       console.log(response.data.items);

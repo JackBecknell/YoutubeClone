@@ -34,7 +34,7 @@ const Comments = (props) => {
             <p>Comment: {comment.text}</p>
             <p>Likes: {comment.likes}</p>
             <p>Dislikes: {comment.dislikes}</p>
-            <p>User: {comment.user_id}</p>
+            <p>User: {comment.user.username} </p>
           </div>
         ))}
     </div>

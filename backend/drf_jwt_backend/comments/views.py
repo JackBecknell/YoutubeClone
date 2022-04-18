@@ -1,9 +1,11 @@
 from django.shortcuts import render
 from rest_framework.decorators import APIView
 from comments.models import Comment
-from .serializers import CommentSerializer
+from .serializers import CommentSerializer, UserSerializer
 from rest_framework.response import Response
 from rest_framework import status
+from django.contrib.auth.models import User
+
 
 from rest_framework.permissions import IsAuthenticated, AllowAny
 
@@ -36,3 +38,9 @@ class CommentUpdate(APIView, IsAuthenticated):
             serializer.save(user=request.user)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class GetUserByCommentId(APIView, AllowAny):
+    def get(self, request, comment_id):
+        comment = Comment.objects.get(id = comment_id)
+        serializer = UserSerializer(comment.user)
+        return Response(serializer.data, status=status.HTTP_200_OK)

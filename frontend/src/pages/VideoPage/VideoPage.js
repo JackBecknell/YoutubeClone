@@ -33,11 +33,11 @@ const VideoPage = (props) => {
     setRequestReload(true);
   }
 
+  //src={`https://www.youtube.com/embed/N0DhCV_-Qbg`} <= Hard coded version for testing
   return (
     <div>
       <iframe
-        // src={`https://www.youtube.com/embed/${props.videoObj.id.videoId}`} This is the good src query, src below is for testing comments (hardcoding one video)
-        src={`https://www.youtube.com/embed/N0DhCV_-Qbg`}
+        src={`https://www.youtube.com/embed/${props.videoObj.id.videoId}`}
       ></iframe>{" "}
       <p>
         TITLE <br></br>
@@ -49,7 +49,7 @@ const VideoPage = (props) => {
       </p>
       <div>
         <p>Related Videos</p>
-        {/* {relatedVideos &&
+        {relatedVideos &&
           relatedVideos.map((vid, index) => (
             <Link key={index} to={`/videopage/${vid.id.videoId}`}>
               <p>{vid.id.videoId}</p>
@@ -59,7 +59,7 @@ const VideoPage = (props) => {
                 ></img>{" "}
               </a>
             </Link>
-          ))} */}
+          ))}
       </div>
       <div>
         <p>Comments</p>

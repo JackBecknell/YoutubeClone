@@ -8,7 +8,7 @@ const HomePage = (props) => {
   const [videos, setVideos] = useState([]);
   const [requestReload, setRequestReload] = useState(true);
 
-  let fakeVideo = useEffect(() => {
+  useEffect(() => {
     if (requestReload) {
       makeGetRequest();
       setRequestReload(false);
@@ -18,7 +18,7 @@ const HomePage = (props) => {
   async function makeGetRequest() {
     try {
       let response = await axios.get(
-        `https://www.googleapis.com/youtube/v3/search?key=AIzaSyAL-N85KHO7-kBzp2jBCtPCV_ISXnhml_0&q=N0DhCV_-Qbg&part=snippet&maxResults=8`
+        `https://www.googleapis.com/youtube/v3/search?key=AIzaSyAL-N85KHO7-kBzp2jBCtPCV_ISXnhml_0&q=${props.searchTerm}&part=snippet&maxResults=8`
       );
       setVideos(response.data.items);
       console.log(response.data.items);
@@ -28,6 +28,9 @@ const HomePage = (props) => {
   }
 
   function handleLinkClick(vid) {
+    console.log(
+      `this comes from homePage, function handleLinkClick: ${vid.id.videoId}`
+    );
     props.setClickedVideo(vid);
   }
 

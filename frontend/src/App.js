@@ -22,6 +22,10 @@ function App() {
   const [searchTerm, setSearchTerm] = useState("rock_n_roll");
   const [clickedVideo, setClickedVideo] = useState([]);
 
+  const updateSelectedVideo = (some_video_obj) => {
+    setClickedVideo(some_video_obj);
+  };
+
   return (
     <div>
       <Navbar />

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import Comments from "../../components/Comments/Comments";
 
 import axios from "axios";
 
@@ -35,7 +36,8 @@ const VideoPage = (props) => {
   return (
     <div>
       <iframe
-        src={`https://www.youtube.com/embed/${props.videoObj.id.videoId}`}
+        // src={`https://www.youtube.com/embed/${props.videoObj.id.videoId}`} This is the good src query, src below is for testing comments (hardcoding one video)
+        src={`https://www.youtube.com/embed/N0DhCV_-Qbg`}
       ></iframe>{" "}
       <p>
         TITLE <br></br>
@@ -47,7 +49,7 @@ const VideoPage = (props) => {
       </p>
       <div>
         <p>Related Videos</p>
-        {relatedVideos &&
+        {/* {relatedVideos &&
           relatedVideos.map((vid, index) => (
             <Link key={index} to={`/videopage/${vid.id.videoId}`}>
               <p>{vid.id.videoId}</p>
@@ -57,7 +59,11 @@ const VideoPage = (props) => {
                 ></img>{" "}
               </a>
             </Link>
-          ))}
+          ))} */}
+      </div>
+      <div>
+        <p>Comments</p>
+        <Comments vid={props.videoObj.id.videoId} />
       </div>
     </div>
   );

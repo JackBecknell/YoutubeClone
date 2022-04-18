@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import Replies from "../Replies/Replies";
 
 import axios from "axios";
 
@@ -35,6 +36,7 @@ const Comments = (props) => {
             <p>Likes: {comment.likes}</p>
             <p>Dislikes: {comment.dislikes}</p>
             <p>User: {comment.user.username} </p>
+            <Replies comment_id={comment.id} />
           </div>
         ))}
     </div>

@@ -1,5 +1,3 @@
-import VidBox from "./VidBox";
-
 import React from "react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
@@ -38,11 +36,12 @@ const HomePage = (props) => {
       {videos &&
         videos.map((vid, index) => (
           <Link key={index} to={`/videopage/${vid.id.videoId}`}>
-            <VidBox
-              vid={vid}
-              index={index}
-              setClickedVideo={props.setClickedVideo}
-            />
+            <p>{vid.id.videoId}</p>
+            <a onClick={() => handleLinkClick(vid)}>
+              <img
+                src={`https://img.youtube.com/vi/${vid.id.videoId}/0.jpg`}
+              ></img>{" "}
+            </a>
           </Link>
         ))}
     </div>

@@ -48,7 +48,12 @@ function App() {
         />
         <Route
           path="/videopage/:video/"
-          element={<VideoPage videoObj={clickedVideo} />}
+          element={
+            <VideoPage
+              videoObj={clickedVideo}
+              setClickedVideo={setClickedVideo}
+            />
+          }
         />
       </Routes>
       <Footer />

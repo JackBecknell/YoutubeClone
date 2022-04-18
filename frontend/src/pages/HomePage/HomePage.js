@@ -18,7 +18,7 @@ const HomePage = (props) => {
   async function makeGetRequest() {
     try {
       let response = await axios.get(
-        `https://www.googleapis.com/youtube/v3/search?key=AIzaSyBrh-qnhm83kyP5pa4zOuCmwv10iWzJYoA&q=${props.searchTerm}&part=snippet&maxResults=8`
+        `https://www.googleapis.com/youtube/v3/search?key=AIzaSyAL-N85KHO7-kBzp2jBCtPCV_ISXnhml_0&q=${props.searchTerm}&part=snippet&maxResults=8`
       );
       setVideos(response.data.items);
       console.log(response.data.items);

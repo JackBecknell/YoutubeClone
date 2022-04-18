@@ -20,13 +20,22 @@ import PrivateRoute from "./utils/PrivateRoute";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("rock_n_roll");
+  const [clickedVideo, setClickedVideo] = useState([]);
 
   return (
     <div>
       <Navbar />
       <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       <Routes>
-        <Route path="/" element={<HomePage searchTerm={searchTerm} />} />
+        <Route
+          path="/"
+          element={
+            <HomePage
+              searchTerm={searchTerm}
+              setClickedVideo={setClickedVideo}
+            />
+          }
+        />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route
@@ -37,7 +46,10 @@ function App() {
             </PrivateRoute>
           }
         />
-        <Route path="/videopage/:video/" element={<VideoPage />} />
+        <Route
+          path="/videopage/:video/"
+          element={<VideoPage videoObj={clickedVideo} />}
+        />
       </Routes>
       <Footer />
     </div>

@@ -9,8 +9,14 @@ const VideoPage = (props) => {
       <iframe
         src={`https://www.youtube.com/embed/${props.videoObj.id.videoId}`}
       ></iframe>{" "}
-      <p>TITLE {props.videoObj.snippet.title}</p>
-      <p>DESCRIPTION {props.videoObj.snippet.description}</p>
+      <p>
+        TITLE <br></br>
+        {props.videoObj.snippet.title}
+      </p>
+      <p>
+        DESCRIPTION <br></br>
+        {props.videoObj.snippet.description}
+      </p>
     </div>
   );
 };

@@ -2,12 +2,15 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Replies from "../Replies/Replies";
+import PostComment from "../PostComment/PostComment";
+import useAuth from "../../hooks/useAuth";
 
 import axios from "axios";
 
 const Comments = (props) => {
   const [comments, setComments] = useState([]);
   const [requestReload, setRequestReload] = useState(true);
+  const [user, token] = useAuth();
 
   useEffect(() => {
     if (requestReload) {
@@ -39,6 +42,7 @@ const Comments = (props) => {
             <Replies comment_id={comment.id} />
           </div>
         ))}
+      {user ? <p>post a comment</p> : <p>you need to login</p>}
     </div>
   );
 };

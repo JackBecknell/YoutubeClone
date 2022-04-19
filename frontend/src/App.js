@@ -25,10 +25,6 @@ function App() {
     "AIzaSyBF2-UNeEAV8n44zYbZBpPGjqEddVHZMK8"
   );
 
-  const updateSelectedVideo = (some_video_obj) => {
-    setClickedVideo(some_video_obj);
-  };
-
   return (
     <div>
       <Navbar />

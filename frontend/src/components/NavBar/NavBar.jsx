@@ -11,8 +11,8 @@ const Navbar = () => {
     <div className="navBar">
       <ul>
         <li className="brand">
-          <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-            <b>React/Django JWT</b>
+          <Link to="/">
+            <img src={"./assets/youtubeicon.png"} alt="youtube-icon" />
           </Link>
         </li>
         <li>

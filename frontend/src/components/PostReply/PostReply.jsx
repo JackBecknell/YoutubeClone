@@ -16,6 +16,7 @@ const PostReply = (props) => {
           },
         })
         .then(console.log("This is coming from your then statment!"));
+      props.reloadReplies();
       resetReply();
     } catch (error) {
       console.log(error.message);

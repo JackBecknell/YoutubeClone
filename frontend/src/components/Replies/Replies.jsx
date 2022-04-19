@@ -29,7 +29,10 @@ const Replies = (props) => {
   return (
     <div>
       {user ? (
-        <PostReply comment_id={props.comment_id} />
+        <PostReply
+          comment_id={props.comment_id}
+          reloadReplies={makeGetRequest}
+        />
       ) : (
         <p>You need to login to post a reply.</p>
       )}

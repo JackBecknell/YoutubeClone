@@ -16,6 +16,7 @@ const PostReply = (props) => {
           },
         })
         .then(console.log("This is coming from your then statment!"));
+      resetReply();
     } catch (error) {
       console.log(error.message);
     }
@@ -28,8 +29,11 @@ const PostReply = (props) => {
       comment: `${props.comment_id}`,
     };
     postReply(newReply);
-    setReplyText(" ");
   }
+
+  const resetReply = () => {
+    setReplyText(" ");
+  };
 
   return (
     <div>
@@ -39,6 +43,7 @@ const PostReply = (props) => {
           <input
             type="text"
             placeholder="Type reply here..."
+            value={replyText}
             onChange={(event) => setReplyText(event.target.value)}
           />
           <button type="submit">Post</button>

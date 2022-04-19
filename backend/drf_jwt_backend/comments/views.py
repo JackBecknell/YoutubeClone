@@ -5,7 +5,8 @@ from .serializers import CommentSerializer, UserSerializer
 from rest_framework.response import Response
 from rest_framework import status
 from django.contrib.auth.models import User
-
+from django.shortcuts import get_object_or_404
+from django.http import Http404
 
 from rest_framework.permissions import IsAuthenticated, AllowAny
 
@@ -44,3 +45,19 @@ class GetUserByCommentId(APIView, AllowAny):
         comment = Comment.objects.get(id = comment_id)
         serializer = UserSerializer(comment.user)
         return Response(serializer.data, status=status.HTTP_200_OK)
+
+class CommentLike(APIView, IsAuthenticated):
+    def get_object(self, comment_id):
+        print('pls hit')
+        try:
+            return Comment.objects.get(id=comment_id)
+        except Comment.DoesNotExist:
+            raise Http404
+
+    def put(self, request, comment_id):
+        comment = self.get_object(comment_id)
+        print(comment)
+        comment.likes += 1
+        comment.save()
+        serializer = CommentSerializer(comment)
+        return Response(serializer.data)

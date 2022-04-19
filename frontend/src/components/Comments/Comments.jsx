@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Replies from "../Replies/Replies";
+import LikeButton from "../LikeButton/LikeButton";
 import PostComment from "../PostComment/PostComment";
 import useAuth from "../../hooks/useAuth";
 
@@ -44,11 +45,15 @@ const Comments = (props) => {
       {comments &&
         comments.map((comment, i) => (
           <div>
-            <p>Comment: {comment.text}</p>
-            <p>Likes: {comment.likes}</p>
-            <p>Dislikes: {comment.dislikes}</p>
             <p>User: {comment.user.username} </p>
-            <Replies comment_id={comment.id} />
+            <p>Comment: {comment.text}</p>
+            <LikeButton
+              likes={comment.likes}
+              comment_id={comment.id}
+              reloadComments={makeGetRequest}
+            />
+            <p>Dislikes: {comment.dislikes}</p>
+            <Replies comment_id={comment.id} reloadComments={makeGetRequest} />
           </div>
         ))}
     </div>

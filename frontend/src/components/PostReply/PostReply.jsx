@@ -28,6 +28,7 @@ const PostReply = (props) => {
       comment: `${props.comment_id}`,
     };
     postReply(newReply);
+    setReplyText("");
   }
 
   return (

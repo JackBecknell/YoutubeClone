@@ -32,6 +32,11 @@ const Comments = (props) => {
 
   return (
     <div>
+      {user ? (
+        <PostComment videoId={props.vid} />
+      ) : (
+        <p>You need to login to post a comment.</p>
+      )}
       {comments &&
         comments.map((comment, i) => (
           <div>
@@ -42,7 +47,6 @@ const Comments = (props) => {
             <Replies comment_id={comment.id} />
           </div>
         ))}
-      {user ? <p>post a comment</p> : <p>you need to login</p>}
     </div>
   );
 };

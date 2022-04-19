@@ -20,11 +20,10 @@ import PrivateRoute from "./utils/PrivateRoute";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("rock_n_roll");
+  const [APIkey, setAPIkey] = useState(
+    "AIzaSyBF2-UNeEAV8n44zYbZBpPGjqEddVHZMK8"
+  );
   const [clickedVideo, setClickedVideo] = useState([]);
-
-  const updateSelectedVideo = (some_video_obj) => {
-    setClickedVideo(some_video_obj);
-  };
 
   return (
     <div>
@@ -35,6 +34,7 @@ function App() {
           path="/"
           element={
             <HomePage
+              APIkey={APIkey}
               searchTerm={searchTerm}
               setClickedVideo={setClickedVideo}
             />
@@ -54,6 +54,7 @@ function App() {
           path="/videopage/:video/"
           element={
             <VideoPage
+              APIkey={APIkey}
               videoObj={clickedVideo}
               setClickedVideo={setClickedVideo}
             />

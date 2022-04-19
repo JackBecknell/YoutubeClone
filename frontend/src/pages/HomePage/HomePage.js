@@ -18,33 +18,33 @@ const HomePage = (props) => {
   async function makeGetRequest() {
     try {
       let response = await axios.get(
-        `https://www.googleapis.com/youtube/v3/search?key=AIzaSyAL-N85KHO7-kBzp2jBCtPCV_ISXnhml_0&q=${props.searchTerm}&part=snippet&maxResults=8`
+        //Added API key from props
+        `https://www.googleapis.com/youtube/v3/search?key=${props.APIkey}&q=${props.searchTerm}&part=snippet&maxResults=8`
       );
       setVideos(response.data.items);
-      console.log(response.data.items);
     } catch (ex) {
       console.log("Oh no something didn't work right :(");
     }
   }
 
   function handleLinkClick(vid) {
-    console.log(
-      `this comes from homePage, function handleLinkClick: ${vid.id.videoId}`
-    );
     props.setClickedVideo(vid);
   }
 
+  //I think we may need to wrap each related vid in a button and style that for onClick events.
   return (
     <div>
       {videos &&
         videos.map((vid, index) => (
-          <Link key={index} to={`/videopage/${vid.id.videoId}`}>
+          <Link
+            key={index}
+            onClick={() => handleLinkClick(vid)}
+            to={`/videopage/${vid.id.videoId}`}
+          >
             <p>{vid.id.videoId}</p>
-            <a onClick={() => handleLinkClick(vid)}>
-              <img
-                src={`https://img.youtube.com/vi/${vid.id.videoId}/0.jpg`}
-              ></img>{" "}
-            </a>
+            <img
+              src={`https://img.youtube.com/vi/${vid.id.videoId}/0.jpg`}
+            ></img>{" "}
           </Link>
         ))}
     </div>

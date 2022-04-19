@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import useAuth from "../../hooks/useAuth";
 import axios from "axios";
+import PostReply from "../PostReply/PostReply";
 
 const Replies = (props) => {
   const [replies, setReplies] = useState([]);
@@ -27,12 +28,18 @@ const Replies = (props) => {
 
   return (
     <div>
+      {user ? (
+        <PostReply comment_id={props.comment_id} reload={setRequestReload} />
+      ) : (
+        <p>You need to login to post a reply.</p>
+      )}
+      <Replies comment_id={props.comment_id} />
       <p>Replies: </p>
       {replies &&
         replies.map((reply, i) => (
-          <div>
-            <p>Reply: {reply.text}</p>
+          <div key={i}>
             <p>User: {reply.user.username}</p>
+            <p>Reply: {reply.text}</p>
           </div>
         ))}
     </div>

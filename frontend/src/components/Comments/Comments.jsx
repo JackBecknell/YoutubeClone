@@ -22,9 +22,11 @@ const Comments = (props) => {
   async function makeGetRequest() {
     try {
       let response = await axios.get(
-        `http://127.0.0.1:8000/api/comments/${props.vid}/`
+        `http://127.0.0.1:8000/api/comments/${props.vidId}/`
       );
+      //response.data becomes an array of 2 comment objects but something goes wrong with setComments.
       setComments(response.data);
+      console.log("This may never be logged in the console ):");
     } catch (ex) {
       console.log("Oh no something didn't work right :(");
     }
@@ -32,9 +34,10 @@ const Comments = (props) => {
 
   return (
     <div>
+      {user ? <p>post a comment</p> : <p>you need to login</p>}
       {comments &&
         comments.map((comment, i) => (
-          <div>
+          <div key={i}>
             <p>Comment: {comment.text}</p>
             <p>Likes: {comment.likes}</p>
             <p>Dislikes: {comment.dislikes}</p>
@@ -42,9 +45,9 @@ const Comments = (props) => {
             <Replies comment_id={comment.id} />
           </div>
         ))}
-      {user ? <p>post a comment</p> : <p>you need to login</p>}
     </div>
   );
 };
 
 export default Comments;
+//I moved post replies from in between lines 44 and line 45

@@ -44,24 +44,30 @@ const Comments = (props) => {
         <p>You need to login to post a comment.</p>
       )}
       {comments &&
-        comments.map((comment, i) => (
-          <div>
-            <p>User: {comment.user.username} </p>
-            <p>Comment: {comment.text}</p>
-            <LikeButton
-              likes={comment.likes}
-              comment_id={comment.id}
-              reloadComments={makeGetRequest}
-            />
-            <p>{comment.likes - comment.dislikes}</p>
-            <DislikeButton
-              dislikes={comment.dislikes}
-              comment_id={comment.id}
-              reloadComments={makeGetRequest}
-            />
-            <Replies comment_id={comment.id} reloadComments={makeGetRequest} />
-          </div>
-        ))}
+        comments
+          .slice(0)
+          .reverse()
+          .map((comment, i) => (
+            <div>
+              <p>User: {comment.user.username} </p>
+              <p>Comment: {comment.text}</p>
+              <LikeButton
+                likes={comment.likes}
+                comment_id={comment.id}
+                reloadComments={makeGetRequest}
+              />
+              <p>{comment.likes - comment.dislikes}</p>
+              <DislikeButton
+                dislikes={comment.dislikes}
+                comment_id={comment.id}
+                reloadComments={makeGetRequest}
+              />
+              <Replies
+                comment_id={comment.id}
+                reloadComments={makeGetRequest}
+              />
+            </div>
+          ))}
     </div>
   );
 };

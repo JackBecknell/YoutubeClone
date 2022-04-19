@@ -20,7 +20,7 @@ const VideoPage = (props) => {
   async function makeGetRequest() {
     try {
       let response = await axios.get(
-        `https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${props.videoObj.id.videoId}&type=video&key=AIzaSyBQOGvQTWUgoFekKmd-OIAD3KO2og0EEyc&part=snippet`
+        `https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${props.videoObj.id.videoId}&type=video&key=${props.apiKey}&part=snippet`
       );
       setRelatedVideos(response.data.items);
     } catch (ex) {

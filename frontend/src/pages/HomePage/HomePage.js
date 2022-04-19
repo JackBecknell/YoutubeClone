@@ -36,17 +36,26 @@ const HomePage = (props) => {
 
   return (
     <div>
-      {videos &&
-        videos.map((vid, index) => (
-          <Link key={index} to={`/videopage/${vid.id.videoId}`}>
-            <p>{vid.id.videoId}</p>
-            <a onClick={() => handleLinkClick(vid)}>
-              <img
-                src={`https://img.youtube.com/vi/${vid.id.videoId}/0.jpg`}
-              ></img>{" "}
-            </a>
-          </Link>
-        ))}
+      <div className="video-container">
+        {videos &&
+          videos.map((vid, index) => (
+            <div className="video-card">
+              <Link key={index} to={`/videopage/${vid.id.videoId}`}>
+                <a onClick={() => handleLinkClick(vid)}>
+                  <img
+                    src={`https://img.youtube.com/vi/${vid.id.videoId}/0.jpg`}
+                  ></img>{" "}
+                </a>
+                <div className="title-wrapper">
+                  <p>{vid.snippet.title}</p>
+                </div>
+              </Link>
+              <div className="description-wrapper">
+                <p>{vid.snippet.description}</p>
+              </div>
+            </div>
+          ))}
+      </div>
     </div>
   );
 };

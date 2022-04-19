@@ -66,7 +66,7 @@ button:hover {
 .search-form {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   border: lightgray;
   border-style: solid;
   border-width: 1px;
@@ -75,9 +75,8 @@ button:hover {
 
 .search-form input {
   border: transparent;
-  align-self: center;
-  margin-left: 0.5em;
   font-size: large;
+  margin-left: 0.5em;
 }
 
 .button-holder {
@@ -101,4 +100,44 @@ button:hover {
 
 .button-holder img:hover {
   background-color: transparent;
+}
+
+.video-container {
+  display: grid;
+  grid-template-areas:
+    "1L 1R"
+    "2L 2R"
+    "3L 3R"
+    "4L 4R";
+  margin: auto;
+  margin-top: 4em;
+  align-items: center;
+  justify-items: center;
+}
+
+.video-card {
+  margin: auto;
+  align-self: center;
+  justify-self: center;
+  width: 75%;
+}
+
+.title-wrapper {
+  align-self: center;
+  justify-self: center;
+  margin: auto;
+}
+
+.title-wrapper p {
+  font-size: medium;
+}
+
+.description-wrapper {
+  align-self: center;
+  justify-self: center;
+  margin-bottom: 2rem;
+}
+
+.description-wrapper p {
+  font-size: small;
 }

@@ -6,7 +6,7 @@ const Search = (props) => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    alert("submitted!");
+    props.setStartSearch(true);
     navigate("/");
   };
 

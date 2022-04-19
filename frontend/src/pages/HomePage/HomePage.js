@@ -9,11 +9,12 @@ const HomePage = (props) => {
   const [requestReload, setRequestReload] = useState(true);
 
   useEffect(() => {
-    if (requestReload) {
+    if (requestReload || props.startSearch) {
       makeGetRequest();
       setRequestReload(false);
+      props.setStartSearch(false);
     }
-  }, [requestReload]);
+  }, [requestReload, props.startSearch]);
 
   async function makeGetRequest() {
     try {

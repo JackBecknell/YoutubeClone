@@ -20,22 +20,30 @@ import PrivateRoute from "./utils/PrivateRoute";
 
 function App() {
   const [searchTerm, setSearchTerm] = useState("rock_n_roll");
+  const [startSearch, setStartSearch] = useState(true);
   const [clickedVideo, setClickedVideo] = useState([]);
 
   const [apiKey, setApiKey] = useState(
     "AIzaSyBMLRFVwV-f5nuycG3oUacvaALE4OLlU9w"
+
   );
 
   return (
     <div>
       <Navbar />
-      <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      <Search
+        searchTerm={searchTerm}
+        setStartSearch={setStartSearch}
+        setSearchTerm={setSearchTerm}
+      />
       <Routes>
         <Route
           path="/"
           element={
             <HomePage
               searchTerm={searchTerm}
+              startSearch={startSearch}
+              setStartSearch={setStartSearch}
               setClickedVideo={setClickedVideo}
               apiKey={apiKey}
             />
@@ -56,6 +64,7 @@ function App() {
           element={
             <VideoPage
               videoObj={clickedVideo}
+              setStartSearch={setStartSearch}
               setClickedVideo={setClickedVideo}
               apiKey={apiKey}
             />

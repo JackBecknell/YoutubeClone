@@ -33,7 +33,7 @@ const Comments = (props) => {
   return (
     <div>
       {user ? (
-        <PostComment videoId={props.vid} />
+        <PostComment videoId={props.vid} reloadComments={makeGetRequest} />
       ) : (
         <p>You need to login to post a comment.</p>
       )}

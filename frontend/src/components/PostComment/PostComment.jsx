@@ -16,6 +16,7 @@ const PostComment = (props) => {
           },
         })
         .then(console.log("This is coming from your then statment!"));
+      props.reloadComments();
       resetComment();
     } catch (error) {
       console.log(error.message);

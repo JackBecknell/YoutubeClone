@@ -23,7 +23,7 @@ function App() {
   const [clickedVideo, setClickedVideo] = useState([]);
 
   const [apiKey, setApiKey] = useState(
-    "AIzaSyBQOGvQTWUgoFekKmd-OIAD3KO2og0EEyc"
+    "AIzaSyBrh-qnhm83kyP5pa4zOuCmwv10iWzJYoA"
   );
 
   return (

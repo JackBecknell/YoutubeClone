@@ -5,8 +5,6 @@ import axios from "axios";
 const DislikeButton = (props) => {
   const [user, token] = useAuth();
 
-  // props need to be request reload to comments, comment.likes for useState default, comment.id for put request
-
   const putDislike = async () => {
     try {
       await axios.put(
@@ -17,21 +15,20 @@ const DislikeButton = (props) => {
           },
         }
       );
-      //props.reloadComments();
     } catch (error) {
       console.log(error.message);
     }
+    props.reloadComments();
   };
 
   function handleLike() {
-    putLike();
-    props.reloadComments();
+    putDislike();
   }
 
   return (
     <div key={props.comment_id}>
       <button onClick={handleLike}>Dislike</button>
-      <p>dislikes: {props.dislikes}</p>
+      {/* <p>dislikes: {props.dislikes}</p> */}
     </div>
   );
 };

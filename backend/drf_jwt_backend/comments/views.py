@@ -28,8 +28,6 @@ class CommentDetail(APIView, IsAuthenticated):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
-    
-
 class CommentUpdate(APIView, IsAuthenticated):
 
     def put(self, request, comment_id, format=None):
@@ -48,7 +46,6 @@ class GetUserByCommentId(APIView, AllowAny):
 
 class CommentLike(APIView, IsAuthenticated):
     def get_object(self, comment_id):
-        print('pls hit')
         try:
             return Comment.objects.get(id=comment_id)
         except Comment.DoesNotExist:
@@ -58,6 +55,21 @@ class CommentLike(APIView, IsAuthenticated):
         comment = self.get_object(comment_id)
         print(comment)
         comment.likes += 1
+        comment.save()
+        serializer = CommentSerializer(comment)
+        return Response(serializer.data)
+
+class CommentDislike(APIView, IsAuthenticated):
+    def get_object(self, comment_id):
+        try:
+            return Comment.objects.get(id=comment_id)
+        except Comment.DoesNotExist:
+            raise Http404
+
+    def put(self, request, comment_id):
+        comment = self.get_object(comment_id)
+        print(comment)
+        comment.dislikes += 1
         comment.save()
         serializer = CommentSerializer(comment)
         return Response(serializer.data)

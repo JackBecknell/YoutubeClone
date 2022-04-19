@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import Replies from "../Replies/Replies";
 import LikeButton from "../LikeButton/LikeButton";
+import DislikeButton from "../DislikeButton/DislikeButton";
 import PostComment from "../PostComment/PostComment";
 import useAuth from "../../hooks/useAuth";
 
@@ -52,7 +53,12 @@ const Comments = (props) => {
               comment_id={comment.id}
               reloadComments={makeGetRequest}
             />
-            <p>Dislikes: {comment.dislikes}</p>
+            <p>{comment.likes - comment.dislikes}</p>
+            <DislikeButton
+              dislikes={comment.dislikes}
+              comment_id={comment.id}
+              reloadComments={makeGetRequest}
+            />
             <Replies comment_id={comment.id} reloadComments={makeGetRequest} />
           </div>
         ))}

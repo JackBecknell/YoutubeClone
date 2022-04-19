@@ -20,17 +20,18 @@ const LikeButton = (props) => {
     } catch (error) {
       console.log(error.message);
     }
+    props.reloadComments();
   };
 
   function handleLike() {
     putLike();
-    props.reloadComments();
+    //will eventually add conditional logic to keep user from clicking multiple times
   }
 
   return (
     <div key={props.comment_id}>
       <button onClick={handleLike}>Like</button>
-      <p>likes: {props.likes}</p>
+      {/* <p>likes: {props.likes}</p> */}
     </div>
   );
 };

@@ -12,15 +12,25 @@ const Search = (props) => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          placeholder="Search"
-          type="text"
-          value={props.searchTerm}
-          onChange={(event) => props.setSearchTerm(event.target.value)}
-        />
-        <button type="Submit">Search</button>
-      </form>
+      <div className="search-container">
+        <div className="search-form">
+          <form onSubmit={handleSubmit}>
+            <input
+              placeholder="Search"
+              type="text"
+              value={props.searchTerm}
+              onChange={(event) => props.setSearchTerm(event.target.value)}
+            />
+            <button
+              className="button-holder"
+              type="Submit"
+              style={{ cursor: "pointer" }}
+            >
+              <img src="assets/magglass.png" alt="magnifgying glass icon" />
+            </button>
+          </form>
+        </div>
+      </div>
     </div>
   );
 };

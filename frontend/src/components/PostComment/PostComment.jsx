@@ -5,6 +5,7 @@ import axios from "axios";
 const PostComment = (props) => {
   const [commentText, setCommentText] = useState("");
   const [user, token] = useAuth();
+  let requestReload = false;
 
   const postComment = async (newComment) => {
     try {
@@ -28,9 +29,16 @@ const PostComment = (props) => {
       likes: 0,
       dislikes: 0,
     };
+    resetComment();
+    console.log(commentText);
     postComment(newComment);
-    setCommentText("");
+    console.log("I made it to the end of handleSubmit!!!! :D");
   }
+
+  const resetComment = () => {
+    setCommentText(" ");
+    console.log(commentText);
+  };
 
   return (
     <div>

@@ -14,6 +14,7 @@ const VideoPage = (props) => {
     if (requestReload) {
       makeGetRequest();
       setRequestReload(false);
+      console.log(props.clickedVideo);
     }
   }, [requestReload]);
 

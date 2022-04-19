@@ -16,6 +16,7 @@ const PostComment = (props) => {
           },
         })
         .then(console.log("This is coming from your then statment!"));
+      resetComment();
     } catch (error) {
       console.log(error.message);
     }
@@ -29,7 +30,6 @@ const PostComment = (props) => {
       likes: 0,
       dislikes: 0,
     };
-    resetComment();
     console.log(commentText);
     postComment(newComment);
     console.log("I made it to the end of handleSubmit!!!! :D");
@@ -48,6 +48,7 @@ const PostComment = (props) => {
           <input
             type="text"
             placeholder="Type comment here..."
+            value={commentText}
             onChange={(event) => setCommentText(event.target.value)}
           />
           <button type="submit">Post</button>

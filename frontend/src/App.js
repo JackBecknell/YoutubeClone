@@ -21,6 +21,7 @@ import PrivateRoute from "./utils/PrivateRoute";
 function App() {
   const [searchTerm, setSearchTerm] = useState("rock_n_roll");
   const [clickedVideo, setClickedVideo] = useState([]);
+
   const [apiKey, setApiKey] = useState(
     "AIzaSyBF2-UNeEAV8n44zYbZBpPGjqEddVHZMK8"
   );

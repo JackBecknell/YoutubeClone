@@ -11,7 +11,6 @@ const Replies = (props) => {
   useEffect(() => {
     if (requestReload) {
       makeGetRequest();
-      setRequestReload(false);
     }
   }, [requestReload]);
 

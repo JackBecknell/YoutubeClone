@@ -13,11 +13,11 @@ const Comments = (props) => {
   const [user, token] = useAuth();
 
   useEffect(() => {
-    if (requestReload) {
-      makeGetRequest();
-      setRequestReload(false);
-    }
-  }, [requestReload]);
+    //if (requestReload) {
+    makeGetRequest();
+    //setRequestReload(false);
+    //}
+  }, [props.vidId]);
 
   async function makeGetRequest() {
     try {
@@ -33,8 +33,9 @@ const Comments = (props) => {
   }
 
   return (
-    <div>
-      {user ? <p>post a comment</p> : <p>you need to login</p>}
+    <>
+      {/* {user ? <p>post a comment</p> : <p>you need to login</p>}
+      {console.log("Replies render")}
       {comments &&
         comments.map((comment, i) => (
           <div key={i}>
@@ -44,8 +45,9 @@ const Comments = (props) => {
             <p>User: {comment.user.username} </p>
             <Replies comment_id={comment.id} />
           </div>
-        ))}
-    </div>
+        ))} */}
+      {console.log("Comments from comments.jsx: ", comments)}
+    </>
   );
 };
 

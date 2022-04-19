@@ -2,21 +2,22 @@ import React, { useState, useEffect } from "react";
 import useAuth from "../../hooks/useAuth";
 import axios from "axios";
 
-const LikeButton = (props) => {
+const DislikeButton = (props) => {
   const [user, token] = useAuth();
 
   // props need to be request reload to comments, comment.likes for useState default, comment.id for put request
 
-  const putLike = async () => {
+  const putDislike = async () => {
     try {
       await axios.put(
-        `http://127.0.0.1:8000/api/comments/like/${props.comment_id}/`,
+        `http://127.0.0.1:8000/api/comments/dislike/${props.comment_id}/`,
         {
           headers: {
             Authorization: "Bearer " + token,
           },
         }
       );
+      //props.reloadComments();
     } catch (error) {
       console.log(error.message);
     }
@@ -29,10 +30,10 @@ const LikeButton = (props) => {
 
   return (
     <div key={props.comment_id}>
-      <button onClick={handleLike}>Like</button>
-      <p>likes: {props.likes}</p>
+      <button onClick={handleLike}>Dislike</button>
+      <p>dislikes: {props.dislikes}</p>
     </div>
   );
 };
 
-export default LikeButton;
+export default DislikeButton;

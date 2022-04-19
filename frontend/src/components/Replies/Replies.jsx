@@ -15,6 +15,10 @@ const Replies = (props) => {
     }
   }, [requestReload]);
 
+  useEffect(() => {
+    makeGetRequest();
+  }, [props.vid]);
+
   async function makeGetRequest() {
     try {
       let response = await axios.get(

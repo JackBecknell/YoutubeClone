@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
-
 *,
 *::before,
 *::after {
@@ -30,7 +29,6 @@ button {
 button:hover {
   cursor: pointer;
   color: white;
-  background-color: steelblue;
 }
 
 .container {

@@ -1,0 +1,37 @@
+.post-comment {
+  display: flex;
+  border: lightgray;
+  border-style: solid;
+  border-width: 1px;
+  margin-bottom: 2rem;
+  justify-content: flex-start;
+  margin-right: 2rem;
+}
+
+.comment-reply-wrapper {
+  margin-right: 2rem;
+}
+
+.comment-wrapper {
+  border: lightgray;
+  border-style: solid;
+  border-width: 1px;
+}
+
+.likes-dislikes-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+}
+
+.likes-dislikes-wrapper p {
+  margin-top: 0.3rem;
+}
+
+.comment-wrapper p {
+  font-size: 1rem;
+}
+
+.comment-wrapper h4 {
+  font-weight: bold;
+}

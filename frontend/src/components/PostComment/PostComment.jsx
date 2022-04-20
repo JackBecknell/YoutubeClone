@@ -45,10 +45,9 @@ const PostComment = (props) => {
     <div>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Comment</label>
           <input
             type="text"
-            placeholder="Type comment here..."
+            placeholder="Add a comment..."
             value={commentText}
             onChange={(event) => setCommentText(event.target.value)}
           />

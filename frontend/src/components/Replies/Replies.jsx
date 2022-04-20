@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import useAuth from "../../hooks/useAuth";
 import axios from "axios";
 import PostReply from "../PostReply/PostReply";
+import "./Replies.css";
 
 const Replies = (props) => {
   const [replies, setReplies] = useState([]);

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import useAuth from "../../hooks/useAuth";
 import axios from "axios";
+import "./like.css";
 
 const LikeButton = (props) => {
   const [user, token] = useAuth();
@@ -30,7 +31,7 @@ const LikeButton = (props) => {
 
   return (
     <div key={props.comment_id}>
-      <button onClick={handleLike}>Like</button>
+      <button class="like-button" onClick={handleLike}></button>
       {/* <p>likes: {props.likes}</p> */}
     </div>
   );

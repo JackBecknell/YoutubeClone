@@ -1,0 +1,8 @@
+.dislike-button {
+  background-image: url(./assets/youtubedislike.png);
+  border: none;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin: 0.5em;
+}

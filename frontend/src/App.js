@@ -25,12 +25,12 @@ function App() {
 
   const [apiKey, setApiKey] = useState(
     "AIzaSyCgqLI94Jl-nYlO29-rCyWW2CKT_H2gyec"
+
   );
 
   return (
     <div>
-      <Navbar />
-      <Search
+      <Navbar
         searchTerm={searchTerm}
         setStartSearch={setStartSearch}
         setSearchTerm={setSearchTerm}

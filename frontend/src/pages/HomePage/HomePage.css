@@ -1,55 +1,27 @@
-.search-container {
-  display: flex;
+.video-container-small {
+  display: grid;
+  grid-template-areas:
+    "1"
+    "2"
+    "3"
+    "4"
+    "5"
+    "6"
+    "7"
+    "8"
+    "9";
+  margin: auto;
+  margin-top: 4em;
   align-items: center;
-  justify-content: center;
-}
-
-.search-form {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border: lightgray;
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 5px;
-}
-
-.search-form input {
-  border: transparent;
-  font-size: large;
-  margin-left: 0.5em;
-}
-
-.button-holder {
-  background-color: #f1f1f1;
-  padding: 0em;
-  margin: 0em;
-  border-width: 0px;
-}
-
-.button-holder:hover {
-  background-color: #f1f1f1;
-  cursor: pointer;
-}
-
-.button-holder img {
-  width: 50%;
-  padding: 0em;
-  margin-right: 0rem;
-  margin-top: 0.5rem;
-}
-
-.button-holder img:hover {
-  background-color: transparent;
+  justify-items: center;
 }
 
 .video-container {
   display: grid;
   grid-template-areas:
-    "1L 1R"
-    "2L 2R"
-    "3L 3R"
-    "4L 4R";
+    "1L 1M 1R"
+    "2L 2M 2R"
+    "3L 3M 3R";
   margin: auto;
   margin-top: 4em;
   align-items: center;
@@ -71,6 +43,9 @@
 
 .title-wrapper p {
   font-size: medium;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .description-wrapper {
@@ -81,4 +56,8 @@
 
 .description-wrapper p {
   font-size: small;
+}
+
+a:link {
+  text-decoration: none;
 }

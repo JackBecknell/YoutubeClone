@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import "./Search.css";
 
 const Search = (props) => {
   let navigate = useNavigate();
@@ -16,6 +17,7 @@ const Search = (props) => {
         <div className="search-form">
           <form onSubmit={handleSubmit}>
             <input
+              class="input"
               placeholder="Search"
               type="text"
               value={props.searchTerm}

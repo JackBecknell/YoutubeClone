@@ -19,48 +19,68 @@ const VideoPage = (props) => {
   }, [requestReload]);
 
   async function makeGetRequest(videoId) {
+    let videoArray;
     try {
       let response = await axios.get(
-        `https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${videoId}&type=video&key=${props.apiKey}&part=snippet`
+        `https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${videoId}&type=video&key=${props.apiKey}&part=snippet&maxResults=20`
       );
-      checkRelVideos(response.data.items);
+      videoArray = response.data.items;
     } catch (ex) {
       console.log("From video page get: Oh no something didn't work right :(");
     }
-  }
-  async function makeReplacementGetRequest(videoId) {
-    try {
-      let response = await axios.get(
-        `https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${videoId}&type=video&key=${props.apiKey}&part=snippet&maxResults=1`
-      );
-      console.log("response.data.items : " + response.data.items);
-      console.log("response.data : " + response.data);
-
-      return response.data.items;
-    } catch (ex) {
-      console.log("From video page get: Oh no something didn't work right :(");
-    }
-  }
-
-  function checkRelVideos(videoArray) {
-    let returnArray = [];
+    let goodVideos = [];
     for (let i = 0; i < videoArray.length; i++) {
-      if (videoArray[i].snippet) {
-        returnArray.push(videoArray[i]);
+      if (goodVideos.length >= 8) {
+        break;
       } else {
-        let checkVideo = videoArray[i];
-        while (checkVideo.snippet == undefined) {
-          let newVid = makeReplacementGetRequest(props.videoObj.id.videoId);
-          if (newVid.snippet) {
-            returnArray.push(newVid);
-          } else {
-            checkVideo = newVid;
-          }
+        if (videoArray[i].snippet) {
+          goodVideos.push(videoArray[i]);
         }
       }
     }
-    setRelatedVideos(returnArray);
+    setRelatedVideos(goodVideos);
   }
+  // Keep for now...
+  // async function makeReplacementGetRequest(relatedVideo, videoId) {
+  //   console.log(relatedVideo);
+  //   let videoArray;
+  //   try {
+  //     let response = await axios.get(
+  //       `https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${relatedVideo.id.videoId}&type=video&key=${props.apiKey}&part=snippet&maxResults=20`
+  //     );
+  //     let videoArray = response.data.items;
+  //     console.log(response.data.items);
+  //     return videoArray;
+  //   } catch (ex) {
+  //     console.log(
+  //       "From replacement video get: Oh no something didn't work right :("
+  //     );
+  //   }
+  //   let replacementVid;
+  //   for (let i = 5; i < videoArray.length; i++) {
+  //     if (i.snippet) {
+  //       replacementVid = i;
+  //       break;
+  //     }
+  //   }
+  //   return replacementVid;
+  // }
+
+  // function checkRelVideos(videoArray) {
+  //   let returnArray = [];
+  //   for (let i = 0; i < videoArray.length; i++) {
+  //     if (videoArray[i].snippet) {
+  //       returnArray.push(videoArray[i]);
+  //     } else {
+  //       let newVideo = makeReplacementGetRequest(
+  //         videoArray[i],
+  //         props.videoObj.id.videoId
+  //       );
+  //       returnArray.push(newVideo);
+  //     }
+  //   }
+  //   setRelatedVideos(returnArray);
+  // }
 
   function handleLinkClick(vid) {
     props.setClickedVideo(vid);

@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 import "./NavBar.css";
+import "../Search/Search.css";
 import Search from "../Search/Search";
 
 const Navbar = (props) => {

@@ -36,30 +36,63 @@ const HomePage = (props) => {
     props.setClickedVideo(vid);
   }
 
-  return (
-    <div>
-      <div className="video-container">
-        {videos &&
-          videos.map((vid, index) => (
-            <div className="video-card">
-              <Link key={index} to={`/videopage/${vid.id.videoId}`}>
-                <a onClick={() => handleLinkClick(vid)}>
-                  <img
-                    src={`https://img.youtube.com/vi/${vid.id.videoId}/0.jpg`}
-                  ></img>{" "}
-                </a>
-                <div className="title-wrapper">
-                  <p>{vid.snippet.title}</p>
+  const DisplayVideos = () => {
+    let mediaQueryCondition = window.matchMedia("( max-width: 700px )");
+
+    if (mediaQueryCondition.matches) {
+      return (
+        <div>
+          <div className="video-container-small">
+            {videos &&
+              videos.map((vid, index) => (
+                <div className="video-card">
+                  <Link key={index} to={`/videopage/${vid.id.videoId}`}>
+                    <a onClick={() => handleLinkClick(vid)}>
+                      <img
+                        src={`https://img.youtube.com/vi/${vid.id.videoId}/0.jpg`}
+                      ></img>{" "}
+                    </a>
+                    <div className="title-wrapper">
+                      <p>{vid.snippet.title}</p>
+                    </div>
+                  </Link>
+                  <div className="description-wrapper">
+                    <p>{vid.snippet.description}</p>
+                  </div>
                 </div>
-              </Link>
-              <div className="description-wrapper">
-                <p>{vid.snippet.description}</p>
-              </div>
-            </div>
-          ))}
-      </div>
-    </div>
-  );
+              ))}
+          </div>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <div className="video-container">
+            {videos &&
+              videos.map((vid, index) => (
+                <div className="video-card">
+                  <Link key={index} to={`/videopage/${vid.id.videoId}`}>
+                    <a onClick={() => handleLinkClick(vid)}>
+                      <img
+                        src={`https://img.youtube.com/vi/${vid.id.videoId}/0.jpg`}
+                      ></img>{" "}
+                    </a>
+                    <div className="title-wrapper">
+                      <p>{vid.snippet.title}</p>
+                    </div>
+                  </Link>
+                  <div className="description-wrapper">
+                    <p>{vid.snippet.description}</p>
+                  </div>
+                </div>
+              ))}
+          </div>
+        </div>
+      );
+    }
+  };
+
+  return <DisplayVideos />;
 };
 
 export default HomePage;

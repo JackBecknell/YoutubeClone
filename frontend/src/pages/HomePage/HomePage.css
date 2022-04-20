@@ -1,10 +1,27 @@
+.video-container-small {
+  display: grid;
+  grid-template-areas:
+    "1"
+    "2"
+    "3"
+    "4"
+    "5"
+    "6"
+    "7"
+    "8"
+    "9";
+  margin: auto;
+  margin-top: 4em;
+  align-items: center;
+  justify-items: center;
+}
+
 .video-container {
   display: grid;
   grid-template-areas:
     "1L 1M 1R"
     "2L 2M 2R"
-    "3L 3M 3R"
-    "4L 4M 4R";
+    "3L 3M 3R";
   margin: auto;
   margin-top: 4em;
   align-items: center;

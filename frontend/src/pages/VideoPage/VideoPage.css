@@ -23,6 +23,25 @@
   background-repeat: no-repeat;
 }
 
+.profpic-channel {
+  margin: 0%;
+  padding: 0.4rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: rgb(211, 210, 210);
+  width: 95%;
+  border-top: transparent;
+  border-left: transparent;
+  border-right: transparent;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.profpic-channel p {
+  margin-left: 0.4rem;
+}
+
 .video-title-decrip h3 {
   font-size: x-large;
   margin-top: 0.3rem;
@@ -83,7 +102,8 @@
   overflow: hidden;
 }
 .rel-vid-box img {
-  max-width: 200px;
-  height: 110px;
+  max-width: 220px;
+  width: 220px;
+  height: 120px;
   object-fit: contain;
 }

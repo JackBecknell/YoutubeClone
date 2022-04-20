@@ -53,3 +53,7 @@ input {
 .input:active {
   border: none;
 }
+
+input:focus {
+  outline: none;
+}

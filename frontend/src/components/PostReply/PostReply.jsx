@@ -40,14 +40,13 @@ const PostReply = (props) => {
     <div class="replies-box">
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Reply</label>
           <input
             type="text"
-            placeholder="Type reply here..."
+            placeholder="Add a reply..."
             value={replyText}
             onChange={(event) => setReplyText(event.target.value)}
           />
-          <button type="submit">Post</button>
+          <button type="submit">Reply</button>
         </div>
       </form>
     </div>

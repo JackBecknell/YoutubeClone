@@ -29,8 +29,7 @@ function App() {
 
   return (
     <div>
-      <Navbar />
-      <Search
+      <Navbar
         searchTerm={searchTerm}
         setStartSearch={setStartSearch}
         setSearchTerm={setSearchTerm}

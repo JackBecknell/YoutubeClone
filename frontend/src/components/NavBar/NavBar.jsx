@@ -3,8 +3,9 @@ import { useContext } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import AuthContext from "../../context/AuthContext";
 import "./NavBar.css";
+import Search from "../Search/Search";
 
-const Navbar = () => {
+const Navbar = (props) => {
   const { logoutUser, user } = useContext(AuthContext);
   const navigate = useNavigate();
   return (
@@ -14,6 +15,13 @@ const Navbar = () => {
           <Link to="/">
             <img src={"./assets/youtubeicon.png"} alt="youtube-icon" />
           </Link>
+        </li>
+        <li>
+          <Search
+            searchTerm={props.searchTerm}
+            setStartSearch={props.setStartSearch}
+            setSearchTerm={props.setSearchTerm}
+          />
         </li>
         <li>
           {user ? (

@@ -1,4 +1,17 @@
 .replies-box {
-  margin-right: 2rem;
   margin-left: 2rem;
+  border: lightgray;
+  border-style: solid;
+  border-width: 1px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
+}
+
+.replies-box h4 {
+  font-weight: bold;
+}
+
+.replies-box p {
+  font-size: 1rem;
 }

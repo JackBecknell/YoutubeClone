@@ -1,0 +1,16 @@
+.post-comment-box {
+  margin-left: 2rem;
+  padding: 1rem;
+}
+
+.post-comment-box button {
+  width: 40%;
+  padding: 0;
+  background-color: #4a8bf5;
+  border: none;
+  color: white;
+}
+
+.post-comment-box input:focus {
+  outline: none;
+}

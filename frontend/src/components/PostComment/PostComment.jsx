@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import useAuth from "../../hooks/useAuth";
 import axios from "axios";
+import "./PostComment.css";
 
 const PostComment = (props) => {
   const [commentText, setCommentText] = useState("");
@@ -42,7 +43,7 @@ const PostComment = (props) => {
   };
 
   return (
-    <div>
+    <div className="post-comment-box">
       <form onSubmit={handleSubmit}>
         <div>
           <input
@@ -51,7 +52,7 @@ const PostComment = (props) => {
             value={commentText}
             onChange={(event) => setCommentText(event.target.value)}
           />
-          <button type="submit">Post</button>
+          <button type="submit">Comment</button>
         </div>
       </form>
     </div>

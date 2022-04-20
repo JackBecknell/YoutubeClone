@@ -25,7 +25,6 @@ function App() {
 
   const [apiKey, setApiKey] = useState(
     "AIzaSyBMLRFVwV-f5nuycG3oUacvaALE4OLlU9w"
-
   );
 
   return (

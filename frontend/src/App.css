@@ -64,6 +64,7 @@ button:hover {
 }
 
 .search-form {
+  height: fit-content;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -76,14 +77,13 @@ button:hover {
 .search-form input {
   border: transparent;
   font-size: large;
-  margin-left: 0.5em;
 }
 
 .button-holder {
   background-color: #f1f1f1;
-  padding: 0em;
-  margin: 0em;
+  width: fit-content;
   border-width: 0px;
+  padding: 0%;
 }
 
 .button-holder:hover {
@@ -92,10 +92,10 @@ button:hover {
 }
 
 .button-holder img {
-  width: 50%;
-  padding: 0em;
-  margin-right: 0rem;
-  margin-top: 0.5rem;
+  height: auto;
+  width: 2rem;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .button-holder img:hover {

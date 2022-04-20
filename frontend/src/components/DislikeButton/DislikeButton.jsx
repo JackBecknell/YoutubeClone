@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import useAuth from "../../hooks/useAuth";
 import axios from "axios";
+import "./dislike.css";
 
 const DislikeButton = (props) => {
   const [user, token] = useAuth();
@@ -27,8 +28,7 @@ const DislikeButton = (props) => {
 
   return (
     <div key={props.comment_id}>
-      <button onClick={handleLike}>Dislike</button>
-      {/* <p>dislikes: {props.dislikes}</p> */}
+      <button className="dislike-button" onClick={handleLike}></button>
     </div>
   );
 };

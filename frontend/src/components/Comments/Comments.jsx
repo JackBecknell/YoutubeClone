@@ -6,6 +6,7 @@ import LikeButton from "../LikeButton/LikeButton";
 import DislikeButton from "../DislikeButton/DislikeButton";
 import PostComment from "../PostComment/PostComment";
 import useAuth from "../../hooks/useAuth";
+import "./Comments.css";
 
 import axios from "axios";
 
@@ -38,30 +39,36 @@ const Comments = (props) => {
 
   return (
     <div>
-      {user ? (
-        <PostComment videoId={props.vid} reloadComments={makeGetRequest} />
-      ) : (
-        <p>You need to login to post a comment.</p>
-      )}
+      <div className="post-comment">
+        {user ? (
+          <PostComment videoId={props.vid} reloadComments={makeGetRequest} />
+        ) : (
+          <p>You need to login to post a comment.</p>
+        )}
+      </div>
       {comments &&
         comments
           .slice(0)
           .reverse()
           .map((comment, i) => (
-            <div>
-              <p>User: {comment.user.username} </p>
-              <p>Comment: {comment.text}</p>
-              <LikeButton
-                likes={comment.likes}
-                comment_id={comment.id}
-                reloadComments={makeGetRequest}
-              />
-              <p>{comment.likes - comment.dislikes}</p>
-              <DislikeButton
-                dislikes={comment.dislikes}
-                comment_id={comment.id}
-                reloadComments={makeGetRequest}
-              />
+            <div className="comment-reply-wrapper">
+              <div className="comment-wrapper">
+                <h4>{comment.user.username} </h4>
+                <p>{comment.text}</p>
+                <div className="likes-dislikes-wrapper">
+                  <LikeButton
+                    likes={comment.likes}
+                    comment_id={comment.id}
+                    reloadComments={makeGetRequest}
+                  />
+                  <p>{comment.likes - comment.dislikes}</p>
+                  <DislikeButton
+                    dislikes={comment.dislikes}
+                    comment_id={comment.id}
+                    reloadComments={makeGetRequest}
+                  />
+                </div>
+              </div>
               <Replies
                 comment_id={comment.id}
                 reloadComments={makeGetRequest}

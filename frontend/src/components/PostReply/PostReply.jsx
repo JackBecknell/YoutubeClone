@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import useAuth from "../../hooks/useAuth";
-
+import "./PostReply.css";
 import axios from "axios";
 
 const PostReply = (props) => {
@@ -37,7 +37,7 @@ const PostReply = (props) => {
   };
 
   return (
-    <div>
+    <div class="replies-box">
       <form onSubmit={handleSubmit}>
         <div>
           <label>Reply</label>

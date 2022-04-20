@@ -19,6 +19,7 @@ const RegisterPage = () => {
   return (
     <div className="container">
       <form className="form" onSubmit={handleSubmit}>
+        <img src="./assets/googlelogo.png" alt="google logo" />
         <label>
           Username:{" "}
           <input
@@ -58,7 +59,7 @@ const RegisterPage = () => {
         <label>
           Password:{" "}
           <input
-            type="text"
+            type="password"
             name="password"
             value={formData.password}
             onChange={handleInputChange}

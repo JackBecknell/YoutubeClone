@@ -13,20 +13,53 @@ const VideoPage = (props) => {
 
   useEffect(() => {
     if (requestReload) {
-      makeGetRequest();
+      makeGetRequest(props.videoObj.id.videoId);
       setRequestReload(false);
     }
   }, [requestReload]);
 
-  async function makeGetRequest() {
+  async function makeGetRequest(videoId) {
     try {
       let response = await axios.get(
-        `https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${props.videoObj.id.videoId}&type=video&key=${props.apiKey}&part=snippet`
+        `https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${videoId}&type=video&key=${props.apiKey}&part=snippet`
       );
-      setRelatedVideos(response.data.items);
+      checkRelVideos(response.data.items);
     } catch (ex) {
       console.log("From video page get: Oh no something didn't work right :(");
     }
+  }
+  async function makeReplacementGetRequest(videoId) {
+    try {
+      let response = await axios.get(
+        `https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${videoId}&type=video&key=${props.apiKey}&part=snippet&maxResults=1`
+      );
+      console.log("response.data.items : " + response.data.items);
+      console.log("response.data : " + response.data);
+
+      return response.data.items;
+    } catch (ex) {
+      console.log("From video page get: Oh no something didn't work right :(");
+    }
+  }
+
+  function checkRelVideos(videoArray) {
+    let returnArray = [];
+    for (let i = 0; i < videoArray.length; i++) {
+      if (videoArray[i].snippet) {
+        returnArray.push(videoArray[i]);
+      } else {
+        let checkVideo = videoArray[i];
+        while (checkVideo.snippet == undefined) {
+          let newVid = makeReplacementGetRequest(props.videoObj.id.videoId);
+          if (newVid.snippet) {
+            returnArray.push(newVid);
+          } else {
+            checkVideo = newVid;
+          }
+        }
+      }
+    }
+    setRelatedVideos(returnArray);
   }
 
   function handleLinkClick(vid) {
@@ -34,7 +67,6 @@ const VideoPage = (props) => {
     setRequestReload(true);
   }
 
-  //src={`https://www.youtube.com/embed/N0DhCV_-Qbg`} <= Hard coded version for testing
   return (
     <div>
       <div className="video-relvideos">
@@ -46,7 +78,7 @@ const VideoPage = (props) => {
             ></iframe>{" "}
           </div>
           <h3>{props.videoObj.snippet.title}</h3>
-          <div>
+          <div className="profpic-channel">
             <div className="user-profile"></div>
             <p>{props.videoObj.snippet.channelTitle}</p>
           </div>
@@ -84,3 +116,4 @@ const VideoPage = (props) => {
 };
 
 export default VideoPage;
+//let videoSnip = vid.snipp

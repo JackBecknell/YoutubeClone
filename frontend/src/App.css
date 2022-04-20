@@ -30,7 +30,6 @@ button {
 button:hover {
   cursor: pointer;
   color: white;
-  background-color: steelblue;
 }
 
 .container {

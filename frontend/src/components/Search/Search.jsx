@@ -17,6 +17,7 @@ const Search = (props) => {
         <div className="search-form">
           <form onSubmit={handleSubmit}>
             <input
+              class="input"
               placeholder="Search"
               type="text"
               value={props.searchTerm}

@@ -18,15 +18,26 @@ const HomePage = (props) => {
   }, [requestReload, props.startSearch]);
 
   async function makeGetRequest() {
+    let videoArray;
     try {
       let response = await axios.get(
-        `https://www.googleapis.com/youtube/v3/search?key=${props.apiKey}&q=${props.searchTerm}&part=snippet&maxResults=9`
+        `https://www.googleapis.com/youtube/v3/search?key=${props.apiKey}&q=${props.searchTerm}&part=snippet&maxResults=30`
       );
-      setVideos(response.data.items);
-      console.log(response.data.items);
+      videoArray = response.data.items;
     } catch (ex) {
       console.log("Oh no something didn't work right :(");
     }
+    let goodVideos = [];
+    for (let i = 0; i < videoArray.length; i++) {
+      if (goodVideos.length == 9) {
+        break;
+      } else {
+        if (videoArray[i].snippet) {
+          goodVideos.push(videoArray[i]);
+        }
+      }
+    }
+    setVideos(goodVideos);
   }
 
   function handleLinkClick(vid) {

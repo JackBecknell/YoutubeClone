@@ -43,6 +43,9 @@
 
 .title-wrapper p {
   font-size: medium;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 .description-wrapper {
@@ -53,4 +56,8 @@
 
 .description-wrapper p {
   font-size: small;
+}
+
+a:link {
+  text-decoration: none;
 }

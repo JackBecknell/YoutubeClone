@@ -41,12 +41,11 @@ const Replies = (props) => {
       ) : (
         <p>You need to login to post a reply.</p>
       )}
-      <p>Replies: </p>
       {replies &&
         replies.map((reply, i) => (
-          <div>
-            <p>Reply: {reply.text}</p>
-            <p>User: {reply.user.username}</p>
+          <div className="replies-box">
+            <h4>{reply.user.username}</h4>
+            <p>{reply.text}</p>
           </div>
         ))}
     </div>

@@ -1,4 +1,19 @@
 .replies-box {
-  margin-right: 2rem;
   margin-left: 2rem;
+}
+
+.replies-box input {
+  padding: 0.25rem;
+}
+
+.replies-box button {
+  width: 20%;
+  padding: 0;
+  background-color: #4a8bf5;
+  border: none;
+  color: white;
+}
+
+.replies-box input:focus {
+  outline: none;
 }

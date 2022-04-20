@@ -24,7 +24,7 @@ function App() {
   const [clickedVideo, setClickedVideo] = useState([]);
 
   const [apiKey, setApiKey] = useState(
-    "AIzaSyBMLRFVwV-f5nuycG3oUacvaALE4OLlU9w"
+    "AIzaSyCgqLI94Jl-nYlO29-rCyWW2CKT_H2gyec"
   );
 
   return (
@@ -70,7 +70,6 @@ function App() {
           }
         />
       </Routes>
-      <Footer />
     </div>
   );
 }

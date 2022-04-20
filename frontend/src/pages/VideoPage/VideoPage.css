@@ -1,0 +1,89 @@
+.iframe {
+  width: 95%;
+  min-width: 600px;
+  height: 33rem;
+  min-height: 15rem;
+  margin-top: 1rem;
+}
+
+.video-title-decrip {
+  display: flex;
+  flex-direction: column;
+  margin-left: 1.2rem;
+}
+
+.user-profile {
+  width: 55px;
+  height: 55px;
+  border-radius: 50px;
+  background-color: rgb(219, 219, 219);
+  background-image: url(./media/userIcon-48.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.video-title-decrip h3 {
+  font-size: x-large;
+  margin-top: 0.3rem;
+  margin-left: 0.1rem;
+  border-bottom: rgb(211, 210, 210);
+  width: 95%;
+  border-top: transparent;
+  border-left: transparent;
+  border-right: transparent;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.align-center {
+  display: flex;
+  align-items: center;
+}
+
+.video-relvideos {
+  display: flex;
+}
+
+.rel-vid-box {
+  display: flex;
+  align-items: flex-start;
+  height: fit-content;
+  margin-top: 1rem;
+  width: 400px;
+}
+
+.relbutton {
+  background: transparent;
+  border: transparent;
+}
+
+.video-relvideos a {
+  text-decoration: none;
+}
+
+.rel-vid-title-channel-txt {
+  margin-left: 1rem;
+}
+
+.rel-vid-title-channel-txt h4 {
+  color: black;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.rel-vid-title-channel-txt h5 {
+  margin-top: 1rem;
+  text-overflow: ellipsis;
+  color: rgb(80, 79, 79);
+  overflow: hidden;
+}
+.rel-vid-box img {
+  max-width: 200px;
+  height: 110px;
+  object-fit: contain;
+}

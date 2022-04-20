@@ -1,3 +1,8 @@
+.home-page-wrapper {
+  height: 100%;
+  overflow: contain;
+}
+
 .video-container-small {
   display: grid;
   grid-template-areas:
@@ -18,6 +23,7 @@
 
 .video-container {
   display: grid;
+  max-width: 100%;
   grid-template-areas:
     "1L 1M 1R"
     "2L 2M 2R"

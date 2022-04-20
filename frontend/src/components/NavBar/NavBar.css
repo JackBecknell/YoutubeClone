@@ -18,7 +18,7 @@ li {
   padding: 0.5rem 2rem;
 }
 
-.navBar button {
+.log-button {
   background: rgb(255, 0, 0);
   border-radius: 5px;
   border: 2px solid white;
@@ -28,9 +28,8 @@ li {
   justify-self: center;
 }
 
-.navBar button:hover {
-  background: white;
-  color: steelblue;
+.log-button:hover {
+  background: rgb(134, 69, 69);
   cursor: pointer;
 }
 

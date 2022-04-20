@@ -3,6 +3,8 @@
   align-items: center;
   justify-content: center;
   width: 100%;
+  align-self: center;
+  margin-top: 0.75rem;
 }
 
 .search-form {
@@ -13,6 +15,7 @@
   border-width: 1px;
   border-radius: 5px;
   overflow: hidden;
+  align-self: center;
 }
 
 .search-form form {
@@ -44,5 +47,9 @@ input {
 }
 
 .button-holder img:hover {
-  background-color: transparent;
+  background-color: #f1f1f1;
+}
+
+.input:active {
+  border: none;
 }

@@ -26,7 +26,9 @@ const Navbar = (props) => {
         </li>
         <li>
           {user ? (
-            <button onClick={logoutUser}>Logout</button>
+            <button class="log-button" onClick={logoutUser}>
+              Logout
+            </button>
           ) : (
             <button onClick={() => navigate("/login")}>Login</button>
           )}

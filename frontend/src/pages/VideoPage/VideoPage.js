@@ -61,16 +61,15 @@ const VideoPage = (props) => {
             <div className="user-profile"></div>
             <p>{props.videoObj.snippet.channelTitle}</p>
           </div>
-          <p>
-            DESCRIPTION <br></br>
-            {props.videoObj.snippet.description}
-          </p>
+          <div className="descrip">
+            <p>{props.videoObj.snippet.description}</p>
+          </div>
           <div>
             <p>Comments</p>
             <Comments vid={props.videoObj.id.videoId} />
           </div>
         </div>
-        <div>
+        <div className="rel-vids-col">
           <p>Related Videos</p>
           {relatedVideos &&
             relatedVideos.map((vid, index) => (

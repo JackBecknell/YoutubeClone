@@ -1,26 +1,43 @@
 .iframe {
-  width: 95%;
   min-width: 600px;
+  width: 100%;
+
   height: 33rem;
   min-height: 15rem;
   margin-top: 1rem;
+  margin-right: 2rem;
 }
 
 .video-title-decrip {
   display: flex;
   flex-direction: column;
-  margin-left: 1.2rem;
+  margin-left: 2rem;
+  width: 100%;
+}
+
+.descrip {
+  border-bottom: rgb(211, 210, 210);
+  width: 97%;
+  border-top: transparent;
+  border-left: transparent;
+  border-right: transparent;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.descrip p {
+  padding: 0.7rem;
+  font-size: small;
 }
 
 .user-profile {
-  width: 55px;
-  height: 55px;
+  width: 45px;
+  height: 45px;
   border-radius: 50px;
-  background-color: rgb(219, 219, 219);
+  background-color: rgb(235, 235, 235);
   background-image: url(./media/userIcon-48.png);
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
 }
 
 .profpic-channel {
@@ -30,7 +47,7 @@
   flex-direction: row;
   align-items: center;
   border-bottom: rgb(211, 210, 210);
-  width: 95%;
+  width: 97%;
   border-top: transparent;
   border-left: transparent;
   border-right: transparent;
@@ -47,7 +64,7 @@
   margin-top: 0.3rem;
   margin-left: 0.1rem;
   border-bottom: rgb(211, 210, 210);
-  width: 95%;
+  width: 97%;
   border-top: transparent;
   border-left: transparent;
   border-right: transparent;
@@ -58,15 +75,27 @@
 .align-center {
   display: flex;
   align-items: center;
+  min-width: fit-content;
 }
 
 .video-relvideos {
   display: flex;
+  width: 100vw;
+  justify-content: space-between;
+}
+
+.rel-vids-col {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin-top: 2rem;
+  margin-right: 2rem;
 }
 
 .rel-vid-box {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: flex-start;
   height: fit-content;
   margin-top: 1rem;
   width: 400px;
@@ -103,7 +132,8 @@
 }
 .rel-vid-box img {
   max-width: 220px;
-  width: 220px;
-  height: 120px;
+  width: 100px;
+  min-width: 180px;
+  height: auto;
   object-fit: contain;
 }

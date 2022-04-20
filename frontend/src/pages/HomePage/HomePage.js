@@ -107,3 +107,35 @@ const HomePage = (props) => {
 };
 
 export default HomePage;
+
+//Welcome instructor. Jack Becknell and Tess Danielson wilcome you to experiance exellance
+// khjtyjhfsdfbvfdgbfgbxfgbxfgbfdbzsdfbz
+// kkhjtyjhfsdfbvfdgbfgbxfgbxfgbfdbzsdfbz
+// kkhjtyjhfsdfbvfdgbfgbxfgbxfgbfdbzsdfbzh
+// kkhjtyjhfsdfbvfdgbfgbxfgbxfgbfdbzsdfbzhd
+// kkhjtyjhfsdfbvfdgbfgbxfgbxfgbfdbzsdfbzhde
+// kkhjtyjhfsdfbvfdgbfgbxfgbxfgbfdbzsdfbzhdef
+// kkhjtyjhfsdfbvfdgbfgbxfgbxfgbfdbzsdfbzhsdf
+// kkhjtyjhfsdfbvfdgbfgbxfgbxfgbfdbzsdfbzhsd
+// kkhjtyjhfsdfbvfdgbfgbxfg///////////////
+// kkhjtyjhfsdfbvfdgbfgbxfgbxf      *  zhs
+// kkhjtyjhfsdfbvfdgbfgbxfgbxfgbfdbzsdfbzhsd
+// kkhjtyjhfsdfbvfdgbfgbxfgbxfgbfdbzsdfbzhsdff
+// kkhjtyjhfsdfbvfdgbfgbxfgbxfgbfdbzsdfbzhasdffs
+// kkhjtyjhfsdfbvfdgbfgbxfgbxfgbfdbzsdfbzhasdfsdfs
+// kkhjtyjhfsdfbvfdgbfgbxfgbxfgbfdbzsdfbzhassdfsdfs
+// kkhjtyjhfsdfbvfdgbfgbxfgbxfgbfdbzsdfbasdfsdfsd
+// khjtyjhfsdfbvfdgbfgbxfgbxfgbfdbzsdfbzhsfsd
+// khjtyjhfsdfbvfdgbfgbxfgbxfg fdbzsdfbzhsdfd
+// khjtyjh8sd8bvfdgbfgbxfgbxfgb dbzsd8bzhsd8e8
+// khjtyjhfsdfbvfdgbfgbxfgbxfgb8d|[][][]]]]]
+// khjtyjh8sdfbvfdgbfgbxfgbxfgbfdbzsdfbzhweff
+// khjtyjhfsdfbvfdgbfgbxfgbxfgbfdbzsdfbzhwef
+// khjtyjhfsdfbvfdgbfgbxfgbxfgbfdbzsdfbzhwel
+// khjtyjhfsdfbvfdgbfgbxfgbxfgbfdbzsdfbzhweff
+// khjtyjhfsdfbvfdgbfgbxfgbxfgbfdbzsdfbzhiktgs
+// hjtyjhfsdfbvfdgbfgbxfgbxfgbfdbzsdfbzhwvgh4
+// htyjhfsdfbvfdgbfgbxfgbxfgbfdbzsdfbzhwee
+// asdfasdfasdfasdfasdf
+// kkhjtyjhfsdfbvfdgbfgbx
+// oiimefvoiindsiwnefpvbi

@@ -20,7 +20,7 @@ const HomePage = (props) => {
   async function makeGetRequest() {
     try {
       let response = await axios.get(
-        `https://www.googleapis.com/youtube/v3/search?key=${props.apiKey}&q=${props.searchTerm}&part=snippet&maxResults=8`
+        `https://www.googleapis.com/youtube/v3/search?key=${props.apiKey}&q=${props.searchTerm}&part=snippet&maxResults=9`
       );
       setVideos(response.data.items);
       console.log(response.data.items);

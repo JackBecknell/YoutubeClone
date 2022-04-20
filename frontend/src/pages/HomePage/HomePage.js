@@ -77,7 +77,7 @@ const HomePage = (props) => {
       );
     } else {
       return (
-        <div>
+        <div class-name="home-page-wrapper">
           <div className="video-container">
             {videos &&
               videos.map((vid, index) => (

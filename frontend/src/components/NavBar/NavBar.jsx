@@ -30,7 +30,9 @@ const Navbar = (props) => {
               Logout
             </button>
           ) : (
-            <button onClick={() => navigate("/login")}>Login</button>
+            <button class="log-button" onClick={() => navigate("/login")}>
+              Login
+            </button>
           )}
         </li>
       </ul>

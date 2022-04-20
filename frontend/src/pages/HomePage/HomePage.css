@@ -31,14 +31,21 @@
   margin: auto;
   margin-top: 4em;
   align-items: center;
+  justify-content: space-around;
   justify-items: center;
 }
-
+/* gap: 50px; */
 .video-card {
   margin: auto;
-  align-self: center;
-  justify-self: center;
-  width: 75%;
+  margin-top: 0%;
+  justify-self: top;
+  max-width: 27rem;
+  min-width: 13rem;
+}
+
+.video-card img {
+  max-width: 100%;
+  object-fit: contain;
 }
 
 .title-wrapper {

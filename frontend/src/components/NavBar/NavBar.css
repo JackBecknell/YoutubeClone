@@ -37,3 +37,15 @@ li {
   cursor: pointer;
   font-size: 2rem;
 }
+
+.center {
+  display: flex;
+  align-items: center;
+}
+
+.logout {
+  width: 162px;
+  height: min-content;
+  display: flex;
+  justify-content: end;
+}

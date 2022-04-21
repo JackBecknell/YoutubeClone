@@ -17,14 +17,14 @@ const Navbar = (props) => {
             <img src={"./assets/youtubeicon.png"} alt="youtube-icon" />
           </Link>
         </li>
-        <li>
+        <li className="center">
           <Search
             searchTerm={props.searchTerm}
             setStartSearch={props.setStartSearch}
             setSearchTerm={props.setSearchTerm}
           />
         </li>
-        <li>
+        <li className="logout">
           {user ? (
             <button class="log-button" onClick={logoutUser}>
               Logout
